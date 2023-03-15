@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ilsottosopra3ccaputo/main_screen.dart';
-import 'package:ilsottosopra3ccaputo/main_screen.dart';
 
 void main() {
   runApp(const MyApp());

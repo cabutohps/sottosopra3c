@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:ilsottosopra3ccaputo/home.dart';
-import 'package:ilsottosopra3ccaputo/impostazioni.dart';
-import 'package:ilsottosopra3ccaputo/preferiti.dart';
+import 'package:ilsottosopra3ccaputo/home_screen.dart';
+import 'package:ilsottosopra3ccaputo/impostazioni_screen.dart';
+import 'package:ilsottosopra3ccaputo/preferiti_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,14 +12,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
 
-  List<Widget> pages = [
-
+  List<Widget> pages = const [
     HomeScreen(),
-
     FavoriteScreen(),
-
     SettingsScreen(),
-
       ];
 
   void chooseIndex(int index) {
@@ -47,11 +41,17 @@ class _MainScreenState extends State<MainScreen> {
       body: pages.elementAt(selectedIndex),
       drawer: const Drawer(),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black) ,
+
+        iconTheme: const IconThemeData(color: Colors.black) ,
         title: Center(child: Image.asset('lib/assets/logo.png', width: 200,)),
         backgroundColor: Colors.white,
-        actions: [
-          SizedBox(width: 50,),
+        actions: const[
+          Padding(
+            padding: EdgeInsets.only(right: 15.0),
+            child: CircleAvatar(
+              backgroundColor: Colors.grey,
+              child: Icon(Icons.person, color: Colors.black,)),
+          ),
         ],
       ),
     );
